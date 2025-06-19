@@ -53,7 +53,7 @@ image_generation_tool = load_tool("agents-course/text-to-image", trust_remote_co
 with open("prompts.yaml", 'r') as stream:
     prompt_templates = yaml.safe_load(stream)
     
-agent = CodeAgent(
+demo = CodeAgent(
     model=model,
     tools=[final_answer], ## add your tools here (don't remove final answer)
     max_steps=6,
@@ -66,4 +66,4 @@ agent = CodeAgent(
 )
 
 
-GradioUI(agent).launch()
+GradioUI(demo).launch()
