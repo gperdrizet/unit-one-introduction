@@ -27,6 +27,8 @@ First hands-on course exercise - create a simple agent using Smolagents.
 
 ## Running
 
+From you HuggingFace settings dashboard, create a fine-grained access token with inference permissions.
+
 ### 1. HuggingFace spaces
 
 [Unit One: Smolagents](https://huggingface.co/spaces/gperdrizet/unit-one-smolagents)
