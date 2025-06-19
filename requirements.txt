@@ -4,3 +4,4 @@ requests
 duckduckgo_search
 pandas
 gradio==5.23.1
+transformers
