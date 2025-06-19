@@ -1,5 +1,3 @@
-# Unit one: Smolagents
-
 ---
 title: First Agent
 emoji: ⚡
@@ -18,6 +16,8 @@ tags:
 - agent-course
 
 ---
+
+# Unit one: Smolagents
 
 ## Running
 
