@@ -7,7 +7,7 @@ from tools.final_answer import FinalAnswerTool
 
 from Gradio_UI import GradioUI
 
-# Below is an example of a tool that does nothing. Amaze us with your creativity !
+# Below is an example of a tool that does nothing. Amaze us with your creativity!
 @tool
 def my_custom_tool(arg1:str, arg2:int)-> str: #it's import to specify the return type
     #Keep this format for the description / args / args description but feel free to modify the tool
@@ -40,12 +40,11 @@ final_answer = FinalAnswerTool()
 # model_id='https://pflgm2locj2t89co.us-east-1.aws.endpoints.huggingface.cloud' 
 
 model = HfApiModel(
-max_tokens=2096,
-temperature=0.5,
-model_id='Qwen/Qwen2.5-Coder-32B-Instruct',# it is possible that this model may be overloaded
-custom_role_conversions=None,
+    max_tokens=2096,
+    temperature=0.5,
+    model_id='Qwen/Qwen2.5-Coder-32B-Instruct',# it is possible that this model may be overloaded
+    custom_role_conversions=None
 )
-
 
 # Import tool from Hub
 image_generation_tool = load_tool("agents-course/text-to-image", trust_remote_code=True)
@@ -55,7 +54,11 @@ with open("prompts.yaml", 'r') as stream:
     
 demo = CodeAgent(
     model=model,
-    tools=[get_current_time_in_timezone, final_answer], ## add your tools here (don't remove final answer)
+    tools=[
+        get_current_time_in_timezone,
+        image_generation_tool,
+        final_answer
+    ], ## add your tools here (don't remove final answer)
     max_steps=6,
     verbosity_level=1,
     grammar=None,

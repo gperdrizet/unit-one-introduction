@@ -24,7 +24,6 @@ from smolagents.agents import ActionStep, MultiStepAgent
 from smolagents.memory import MemoryStep
 from smolagents.utils import _is_package_available
 
-
 def pull_messages_from_step(
     step_log: MemoryStep,
 ):
@@ -156,17 +155,19 @@ def stream_to_gradio(
     final_answer = step_log  # Last log is the run's final_answer
     final_answer = handle_agent_output_types(final_answer)
 
-    if isinstance(final_answer, AgentText):
+    if isinstance(final_answer.final_answer, AgentText):
         yield gr.ChatMessage(
             role="assistant",
             content=f"**Final answer:**\n{final_answer.to_string()}\n",
         )
-    elif isinstance(final_answer, AgentImage):
+    elif isinstance(final_answer.final_answer, AgentImage):
+
         yield gr.ChatMessage(
             role="assistant",
-            content={"path": final_answer.to_string(), "mime_type": "image/png"},
+            content=gr.Image(str(final_answer.final_answer)),
+            metadata={"mime_type": "image/png"},
         )
-    elif isinstance(final_answer, AgentAudio):
+    elif isinstance(final_answer.final_answer, AgentAudio):
         yield gr.ChatMessage(
             role="assistant",
             content={"path": final_answer.to_string(), "mime_type": "audio/wav"},
