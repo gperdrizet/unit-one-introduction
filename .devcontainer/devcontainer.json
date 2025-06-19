@@ -19,5 +19,5 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "gradio app.py"
+	"postCreateCommand": "python app.py"
 }
