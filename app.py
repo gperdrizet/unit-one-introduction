@@ -1,9 +1,12 @@
-from smolagents import CodeAgent, DuckDuckGoSearchTool, HfApiModel, load_tool, tool
+from smolagents import CodeAgent, HfApiModel, load_tool, tool #DuckDuckGoSearchTool
 import datetime
 import requests
 import pytz
 import yaml
 from tools.final_answer import FinalAnswerTool
+from tools.visit_webpage import VisitWebpageTool
+from tools.web_search import DuckDuckGoSearchTool
+
 
 from Gradio_UI import GradioUI
 
@@ -35,6 +38,8 @@ def get_current_time_in_timezone(timezone: str) -> str:
 
 
 final_answer = FinalAnswerTool()
+web_search = DuckDuckGoSearchTool()
+visit_page = VisitWebpageTool()
 
 # If the agent does not answer, the model is overloaded, please use another model or the following Hugging Face Endpoint that also contains qwen2.5 coder:
 # model_id='https://pflgm2locj2t89co.us-east-1.aws.endpoints.huggingface.cloud' 
@@ -57,6 +62,8 @@ demo = CodeAgent(
     tools=[
         get_current_time_in_timezone,
         image_generation_tool,
+        web_search,
+        visit_page,
         final_answer
     ], ## add your tools here (don't remove final answer)
     max_steps=6,

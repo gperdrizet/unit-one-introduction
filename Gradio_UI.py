@@ -158,10 +158,9 @@ def stream_to_gradio(
     if isinstance(final_answer.final_answer, AgentText):
         yield gr.ChatMessage(
             role="assistant",
-            content=f"**Final answer:**\n{final_answer.to_string()}\n",
+            content=str(final_answer.final_answer)
         )
     elif isinstance(final_answer.final_answer, AgentImage):
-
         yield gr.ChatMessage(
             role="assistant",
             content=gr.Image(str(final_answer.final_answer)),
@@ -173,7 +172,7 @@ def stream_to_gradio(
             content={"path": final_answer.to_string(), "mime_type": "audio/wav"},
         )
     else:
-        yield gr.ChatMessage(role="assistant", content=f"**Final answer:** {str(final_answer)}")
+        yield gr.ChatMessage(role="assistant", content=f"**Final answer:** {str(final_answer.final_answer)}")
 
 
 class GradioUI:
