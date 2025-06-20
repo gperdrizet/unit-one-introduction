@@ -159,7 +159,7 @@ def stream_to_gradio(
             role="assistant",
             content=str(final_answer)
         )
-    if isinstance(final_answer, AgentImage):
+    elif isinstance(final_answer, AgentImage):
         yield gr.ChatMessage(
             role="assistant",
             content=gr.Image(str(final_answer)),
