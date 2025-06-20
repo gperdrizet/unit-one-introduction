@@ -152,27 +152,30 @@ def stream_to_gradio(
         ):
             yield message
 
-    final_answer = step_log  # Last log is the run's final_answer
-    final_answer = handle_agent_output_types(final_answer)
+    final_answer = step_log.final_answer  # Last log is the run's final_answer
 
-    if isinstance(final_answer.final_answer, AgentText):
+    if isinstance(final_answer, AgentText):
         yield gr.ChatMessage(
             role="assistant",
-            content=str(final_answer.final_answer)
+            content=str(final_answer)
         )
-    elif isinstance(final_answer.final_answer, AgentImage):
+    if isinstance(final_answer, AgentImage):
         yield gr.ChatMessage(
             role="assistant",
-            content=gr.Image(str(final_answer.final_answer)),
+            content=gr.Image(str(final_answer)),
             metadata={"mime_type": "image/png"},
         )
-    elif isinstance(final_answer.final_answer, AgentAudio):
+    elif isinstance(final_answer, AgentAudio):
         yield gr.ChatMessage(
             role="assistant",
-            content={"path": final_answer.to_string(), "mime_type": "audio/wav"},
+            content=gr.Audio(final_answer),
+            metadata={"mime_type": "audio/wav"},
         )
     else:
-        yield gr.ChatMessage(role="assistant", content=f"**Final answer:** {str(final_answer.final_answer)}")
+        yield gr.ChatMessage(
+            role="assistant",
+            content=f"**Final answer:** {str(final_answer)}"
+        )
 
 
 class GradioUI:

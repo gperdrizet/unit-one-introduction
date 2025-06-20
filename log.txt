@@ -1,0 +1,6 @@
+* Running on local URL:  http://127.0.0.1:7860
+* Running on public URL: https://10d3faa19e28ec2d2c.gradio.live
+
+This share link expires in 1 week. For free permanent hosting and GPU upgrades, run `gradio deploy` from the terminal in the working directory to deploy to Hugging Face Spaces (https://huggingface.co/spaces)
+Keyboard interruption in main thread... closing server.
+Killing tunnel 127.0.0.1:7860 <> https://10d3faa19e28ec2d2c.gradio.live
