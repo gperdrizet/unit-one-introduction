@@ -21,13 +21,22 @@ Check out the configuration reference at [spaces-config-reference](https://huggi
 
 # Unit one: Smolagents
 
-Main course GitHub repository [HuggingFace agents course](https://github.com/gperdrizet/hf-agents-course).
-
 First hands-on course exercise - create a simple agent using Smolagents.
+
+- My main GitHub repository for the course: [HuggingFace agents course](https://github.com/gperdrizet/hf-agents-course).
+- Unit 1 project on HuggingFace: [Let’s Create Our First Agent Using smolagents](https://huggingface.co/learn/agents-course/unit1/tutorial)
+
+## Features
+
+1. Multi-turn agent with [Qwen2.5-Coder-32B-Instruct](https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct) using Gradio and smolagents
+2. Image generation using [FLUX.1-schnell](https://huggingface.co/black-forest-labs/FLUX.1-schnell) from Black Forest Labs
+3. Text to speech using [Chatterbox](https://huggingface.co/ResembleAI/chatterbox) from Resemble AI
+4. Web search/site crawling
+5. Time-zone look-up
 
 ## Running
 
-From you HuggingFace settings dashboard, create a fine-grained access token with inference permissions.
+From your HuggingFace settings dashboard, create a fine-grained access token with inference permissions.
 
 ### 1. HuggingFace spaces
 
