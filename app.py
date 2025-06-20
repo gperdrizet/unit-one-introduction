@@ -6,6 +6,7 @@ import pytz
 import yaml
 import torch
 import soundfile as sf
+from scipy import signal
 from huggingface_hub import InferenceClient
 from tools.final_answer import FinalAnswerTool
 from tools.visit_webpage import VisitWebpageTool
@@ -31,9 +32,13 @@ class TextToSpeechTool(Tool):
             model="ResembleAI/chatterbox",
         )
 
-        audio, _ = sf.read(io.BytesIO(output))
+        audio, samplerate = sf.read(io.BytesIO(output))
 
-        return torch.from_numpy(audio)
+        new_samplerate = 16_000
+        num_samples = int(len(audio) * new_samplerate / samplerate)
+        resampled_audio = signal.resample(audio, num_samples)
+
+        return torch.from_numpy(resampled_audio)
 
 
 @tool
