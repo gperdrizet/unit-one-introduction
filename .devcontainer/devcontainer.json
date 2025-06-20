@@ -19,5 +19,8 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "python app.py"
+	//"postCreateCommand": "",
+
+	// Use 'postAttachCommand' to run commands after the container is started.
+	"postAttachCommand": "python app.py"
 }
