@@ -19,9 +19,9 @@ tags:
 
 Check out the configuration reference at [spaces-config-reference](https://huggingface.co/docs/hub/spaces-config-reference).
 
-# Unit project: First Agent Using smolagents
+# Unit one project: first agent using smolagents
 
-Hands-on tutorial - create a simple agent using Smolagents.
+Hands-on tutorial - create a simple agent using smolagents.
 
 - My main GitHub repository for the course: [HuggingFace agents course](https://github.com/gperdrizet/hf-agents-course).
 - Unit one tutorial page on HuggingFace: [Let’s Create Our First Agent Using smolagents](https://huggingface.co/learn/agents-course/unit1/tutorial)
@@ -40,12 +40,12 @@ From your HuggingFace settings dashboard, create a fine-grained access token wit
 
 ### 1. HuggingFace spaces
 
-[Unit One: Smolagents](https://huggingface.co/spaces/gperdrizet/unit-one-smolagents)
+[Unit one project: smolagents](https://huggingface.co/spaces/gperdrizet/unit-one-smolagents)
 
 Make your own copy of the space and add your HuggingFace token as `HF_TOKEN` via: settings → Secrets and variables → New secret.
 
 ### 2. GitHub codespace
 
-[Unit One: Smolagents](https://github.com/gperdrizet/unit-one-introduction/tree/main)
+[Unit one project: smolagents](https://github.com/gperdrizet/unit-one-introduction/tree/main)
 
 Fork a copy of the repository, then add you HuggingFace token as `HF_TOKEN` via: settings → Secrets and variables → Codespaces → New repository secret. Start a new codespace on main.
