@@ -1,7 +1,7 @@
 ---
 title: First Agent
 colorFrom: green
-colorTo: yellow
+colorTo: gray
 sdk: gradio
 sdk_version: 5.23.1
 app_file: app.py
