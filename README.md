@@ -1,20 +1,17 @@
 ---
-title: First Agent
-emoji: ⚡
-colorFrom: pink
-colorTo: yellow
+title: Unit one - first agent
+colorFrom: green
+colorTo: gray
 sdk: gradio
 sdk_version: 5.23.1
 app_file: app.py
 pinned: false
 tags:
-
 - smolagents
 - agent
 - smolagent
 - tool
 - agent-course
-
 ---
 
 Check out the configuration reference at [spaces-config-reference](https://huggingface.co/docs/hub/spaces-config-reference).
