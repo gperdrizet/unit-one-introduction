@@ -45,4 +45,4 @@ Make your own copy of the space and add your HuggingFace token as `HF_TOKEN` via
 
 [Unit one project: smolagents](https://github.com/gperdrizet/unit-one-introduction/tree/main)
 
-Fork a copy of the repository, then add you HuggingFace token as `HF_TOKEN` via: settings → Secrets and variables → Codespaces → New repository secret. Start a new codespace on main.
+Fork a copy of the repository, then add your HuggingFace token as `HF_TOKEN` via: settings → Secrets and variables → Codespaces → New repository secret. Start a new codespace on main.
