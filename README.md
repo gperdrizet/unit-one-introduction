@@ -1,5 +1,5 @@
 ---
-title: First Agent
+title: Unit one - first agent
 colorFrom: green
 colorTo: gray
 sdk: gradio
